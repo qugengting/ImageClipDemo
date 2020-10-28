@@ -1,5 +1,6 @@
 package com.qugengting.imageclipdemo
 
+import android.app.Activity
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
@@ -20,7 +21,7 @@ class ClipActivity : AppCompatActivity() {
 
     fun clip(view: View?) {
         bitmap = clipLayout.clip()
-        setResult(0)
+        setResult(Activity.RESULT_OK)
         finish()
     }
 

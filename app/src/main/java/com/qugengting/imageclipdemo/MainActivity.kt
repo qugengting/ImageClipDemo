@@ -1,5 +1,6 @@
 package com.qugengting.imageclipdemo
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val bitmap = ClipActivity.bitmap.copy(Bitmap.Config.ARGB_8888, true)
-        imgClip.setImageBitmap(bitmap)
+        if (resultCode == Activity.RESULT_OK && requestCode == 0) {
+            val bitmap = ClipActivity.bitmap.copy(Bitmap.Config.ARGB_8888, true)
+            imgClip.setImageBitmap(bitmap)
+        }
     }
 }
